@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+
+<StackPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="PIXEL_POCKET.CUSTOMER.EditProfile_Controller"
+    prefWidth="1440"
+    prefHeight="1027"
+    style="-fx-background-color: linear-gradient(to bottom right, #1D7386, #7F9594);">
+
+    <HBox>
+
+        <!-- LEFT SIDEBAR -->
+        <VBox prefWidth="390" prefHeight="1027" alignment="TOP_LEFT">
+
+            <!-- HOME BUTTON -->
+            <HBox prefHeight="60" alignment="CENTER_LEFT"
+                style="-fx-padding: 20 0 0 20;">
+                <Button onAction="#goToHome"
+                    style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="⌂"
+                            style="-fx-font-size: 28;
+                                   -fx-text-fill: rgba(195,200,201,0.85);"/>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <!-- BACK + TITLE -->
+            <HBox alignment="CENTER_LEFT" spacing="10"
+                style="-fx-padding: 80 0 14 20;
+                       -fx-border-color: transparent transparent
+                           rgba(195,200,201,0.4) transparent;
+                       -fx-border-width: 0 0 1 0;">
+                <Button onAction="#goBack"
+                    style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="←"
+                            style="-fx-font-size: 22; -fx-text-fill: #C3C8C9;"/>
+                    </graphic>
+                </Button>
+                <Label text="✎"
+                    style="-fx-font-size: 20; -fx-text-fill: #C3C8C9;"/>
+                <Label text="Edit Profile"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 26;
+                           -fx-font-weight: bold;
+                           -fx-text-fill: #C3C8C9;"/>
+            </HBox>
+
+        </VBox>
+
+        <!-- RIGHT DARK PANEL -->
+        <StackPane prefWidth="1050" prefHeight="1027"
+            style="-fx-background-color: #385459;
+                   -fx-background-radius: 60 0 0 0;">
+
+            <ScrollPane fitToWidth="true"
+                style="-fx-background: transparent;
+                       -fx-background-color: transparent;">
+
+                <HBox spacing="0" alignment="TOP_CENTER"
+                    style="-fx-padding: 50 40 40 40;">
+
+                    <!-- LEFT COLUMN -->
+                    <VBox spacing="16" prefWidth="420"
+                        style="-fx-padding: 0 50 0 0;">
+
+                        <Label text="Personal Details"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 22;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+
+                        <!-- FIRST + LAST NAME -->
+                        <HBox spacing="12">
+                            <TextField fx:id="firstNameField"
+                                promptText="First Name"
+                                prefHeight="48" prefWidth="190"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 14;
+                                       -fx-font-size: 15;
+                                       -fx-text-fill: #1a1a1a;
+                                       -fx-prompt-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.9);"/>
+                            <TextField fx:id="lastNameField"
+                                promptText="Last Name"
+                                prefHeight="48" prefWidth="190"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 14;
+                                       -fx-font-size: 15;
+                                       -fx-text-fill: #1a1a1a;
+                                       -fx-prompt-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.9);"/>
+                        </HBox>
+
+                        <!-- DATE OF BIRTH -->
+                        <Label text="Date Of Birth"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 20;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+                        <HBox spacing="10">
+                            <TextField fx:id="dobDayField"
+                                promptText="01"
+                                prefHeight="48" prefWidth="100"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 14;
+                                       -fx-font-size: 15;
+                                       -fx-text-fill: #1a1a1a;
+                                       -fx-prompt-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.9);"/>
+                            <ComboBox fx:id="dobMonthCombo"
+                                prefHeight="48" prefWidth="150"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-font-size: 15;"/>
+                            <TextField fx:id="dobYearField"
+                                promptText="2000"
+                                prefHeight="48" prefWidth="120"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 14;
+                                       -fx-font-size: 15;
+                                       -fx-text-fill: #1a1a1a;
+                                       -fx-prompt-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.9);"/>
+                        </HBox>
+
+                        <!-- GENDER -->
+                        <Label text="Gender"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 20;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+                        <HBox spacing="30" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="maleRadio" text="MALE"
+                                style="-fx-text-fill: white; -fx-font-size: 14;"/>
+                            <RadioButton fx:id="femaleRadio" text="FEMALE"
+                                style="-fx-text-fill: white; -fx-font-size: 14;"/>
+                            <RadioButton fx:id="otherRadio" text="OTHER"
+                                style="-fx-text-fill: white; -fx-font-size: 14;"/>
+                        </HBox>
+
+                        <!-- RESIDENTIAL ADDRESS -->
+                        <Label text="Residential Address"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 20;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+                        <TextField fx:id="addressLine1Field"
+                            promptText="Address Line 1"
+                            prefHeight="48"
+                            style="-fx-background-color: rgba(195,200,201,0.9);
+                                   -fx-background-radius: 26;
+                                   -fx-padding: 0 14;
+                                   -fx-font-size: 15;
+                                   -fx-text-fill: #1a1a1a;
+                                   -fx-prompt-text-fill: #3a5a5f;
+                                   -fx-control-inner-background:
+                                       rgba(195,200,201,0.9);"/>
+                        <TextField fx:id="addressLine2Field"
+                            promptText="Address Line 2 (Optional)"
+                            prefHeight="48"
+                            style="-fx-background-color: rgba(195,200,201,0.9);
+                                   -fx-background-radius: 26;
+                                   -fx-padding: 0 14;
+                                   -fx-font-size: 15;
+                                   -fx-text-fill: #1a1a1a;
+                                   -fx-prompt-text-fill: #3a5a5f;
+                                   -fx-control-inner-background:
+                                       rgba(195,200,201,0.9);"/>
+
+                        <!-- POSTCODE + TOWN + COUNTRY -->
+                        <HBox spacing="10">
+                            <TextField fx:id="postcodeField"
+                                promptText="Post-Code"
+                                prefHeight="48" prefWidth="110"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 10;
+                                       -fx-font-size: 13;
+                                       -fx-text-fill: #1a1a1a;
+                                       -fx-prompt-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.9);"/>
+                            <TextField fx:id="townField"
+                                promptText="Town"
+                                prefHeight="48" prefWidth="120"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 10;
+                                       -fx-font-size: 13;
+                                       -fx-text-fill: #1a1a1a;
+                                       -fx-prompt-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.9);"/>
+                            <ComboBox fx:id="countryCombo"
+                                prefHeight="48" prefWidth="160"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-font-size: 13;"/>
+                        </HBox>
+
+                        <!-- PHONE -->
+                        <HBox spacing="10">
+                            <ComboBox fx:id="dialCodeCombo"
+                                prefHeight="48" prefWidth="140"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-font-size: 13;"/>
+                            <TextField fx:id="phoneField"
+                                promptText="732*****"
+                                prefHeight="48" prefWidth="240"
+                                style="-fx-background-color: rgba(195,200,201,0.9);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 10;
+                                       -fx-font-size: 13;
+                                       -fx-text-fill: #1a1a1a;
+                                       -fx-prompt-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.9);"/>
+                        </HBox>
+
+                    </VBox>
+
+                    <!-- VERTICAL DIVIDER -->
+                    <Rectangle width="1" height="800"
+                        style="-fx-fill: rgba(195,200,201,0.4);"/>
+
+                    <!-- RIGHT COLUMN -->
+                    <VBox spacing="16" prefWidth="420"
+                        style="-fx-padding: 0 0 0 50;">
+
+                        <!-- EMAIL - READ ONLY -->
+                        <Label text="E-Mail Address"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 22;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+                        <StackPane prefHeight="48">
+                            <TextField fx:id="emailField"
+                                prefHeight="48"
+                                editable="false"
+                                style="-fx-background-color: rgba(195,200,201,0.7);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 44 0 14;
+                                       -fx-font-size: 15;
+                                       -fx-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.7);"/>
+                            <Label text="🔒"
+                                style="-fx-font-size: 16;"
+                                StackPane.alignment="CENTER_RIGHT"
+                                translateX="-14"/>
+                        </StackPane>
+
+                        <!-- USER ID - READ ONLY -->
+                        <Label text="User ID"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 22;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+                        <StackPane prefHeight="48">
+                            <TextField fx:id="userIdField"
+                                prefHeight="48"
+                                editable="false"
+                                style="-fx-background-color: rgba(195,200,201,0.7);
+                                       -fx-background-radius: 26;
+                                       -fx-padding: 0 44 0 14;
+                                       -fx-font-size: 15;
+                                       -fx-text-fill: #3a5a5f;
+                                       -fx-control-inner-background:
+                                           rgba(195,200,201,0.7);"/>
+                            <Label text="🔒"
+                                style="-fx-font-size: 16;"
+                                StackPane.alignment="CENTER_RIGHT"
+                                translateX="-14"/>
+                        </StackPane>
+
+                        <!-- PAYMENT DETAILS -->
+                        <Label text="Payment Details"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 22;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+
+                        <Label text="Card Number"
+                            style="-fx-font-size: 13;
+                                   -fx-text-fill: rgba(195,200,201,0.8);"/>
+                        <TextField fx:id="cardNumberField"
+                            promptText="Card Number"
+                            prefHeight="48"
+                            style="-fx-background-color: rgba(195,200,201,0.9);
+                                   -fx-background-radius: 26;
+                                   -fx-padding: 0 14;
+                                   -fx-font-size: 15;
+                                   -fx-text-fill: #1a1a1a;
+                                   -fx-prompt-text-fill: #3a5a5f;
+                                   -fx-control-inner-background:
+                                       rgba(195,200,201,0.9);"/>
+
+                        <!-- SORT CODE + CVV -->
+                        <HBox spacing="16">
+                            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                <Label text="Sort Code"
+                                    style="-fx-font-size: 13;
+                                           -fx-text-fill: rgba(195,200,201,0.8);"/>
+                                <TextField fx:id="sortCodeField"
+                                    promptText="00-00-00"
+                                    prefHeight="48"
+                                    style="-fx-background-color: rgba(195,200,201,0.9);
+                                           -fx-background-radius: 26;
+                                           -fx-padding: 0 14;
+                                           -fx-font-size: 15;
+                                           -fx-text-fill: #1a1a1a;
+                                           -fx-prompt-text-fill: #3a5a5f;
+                                           -fx-control-inner-background:
+                                               rgba(195,200,201,0.9);"/>
+                            </VBox>
+                            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                <Label text="CVV"
+                                    style="-fx-font-size: 13;
+                                           -fx-text-fill: rgba(195,200,201,0.8);"/>
+                                <TextField fx:id="cvvField"
+                                    promptText="***"
+                                    prefHeight="48"
+                                    style="-fx-background-color: rgba(195,200,201,0.9);
+                                           -fx-background-radius: 26;
+                                           -fx-padding: 0 14;
+                                           -fx-font-size: 15;
+                                           -fx-text-fill: #1a1a1a;
+                                           -fx-prompt-text-fill: #3a5a5f;
+                                           -fx-control-inner-background:
+                                               rgba(195,200,201,0.9);"/>
+                            </VBox>
+                        </HBox>
+
+                        <!-- ID CARD UPLOAD -->
+                        <Label text="ID Card Upload"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 22;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: white;"/>
+                        <StackPane prefHeight="120"
+                            onMouseClicked="#handleIdUpload"
+                            style="-fx-background-color: rgba(195,200,201,0.15);
+                                   -fx-background-radius: 20;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 20;
+                                   -fx-border-width: 1.5;
+                                   -fx-cursor: hand;">
+                            <Label text="👤"
+                                style="-fx-font-size: 50;
+                                       -fx-text-fill: rgba(195,200,201,0.6);"/>
+                            <Label fx:id="idFileLabel" text=""
+                                style="-fx-font-size: 12;
+                                       -fx-text-fill: #15F06C;"
+                                StackPane.alignment="BOTTOM_CENTER"
+                                translateY="-8"/>
+                            <Label text="🔒"
+                                style="-fx-font-size: 16;"
+                                StackPane.alignment="TOP_RIGHT"
+                                translateX="-10" translateY="10"/>
+                        </StackPane>
+
+                        <!-- ERROR / SUCCESS -->
+                        <Label fx:id="errorLabel" text=""
+                            wrapText="true"
+                            style="-fx-text-fill: #ff6b6b; -fx-font-size: 12;"/>
+                        <Label fx:id="successLabel" text=""
+                            wrapText="true"
+                            style="-fx-text-fill: #15F06C; -fx-font-size: 12;"/>
+
+                        <!-- SAVE BUTTON -->
+                        <Button text="SAVE CHANGES"
+                            onAction="#handleSave"
+                            prefWidth="420" prefHeight="55"
+                            style="-fx-background-color: #7F9594;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-font-size: 18;
+                                   -fx-background-radius: 26;
+                                   -fx-cursor: hand;"/>
+
+                    </VBox>
+                </HBox>
+            </ScrollPane>
+        </StackPane>
+    </HBox>
+</StackPane>

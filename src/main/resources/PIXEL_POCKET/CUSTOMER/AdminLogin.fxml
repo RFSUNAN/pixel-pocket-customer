@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<StackPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="PIXEL_POCKET.CUSTOMER.AdminLogonFxml_Controller"
+    prefWidth="1000"
+    prefHeight="750"
+    style="-fx-background-color: linear-gradient(to bottom, #1D7386, #7F9594);">
+
+    <VBox spacing="15" alignment="CENTER"
+        maxWidth="650"
+        StackPane.alignment="CENTER">
+
+        <!-- TITLE -->
+        <Label text="ADMIN USER LOGIN"
+            alignment="CENTER"
+            prefWidth="650"
+            style="-fx-font-family: 'Arial';
+                   -fx-font-size: 50;
+                   -fx-font-weight: bold;
+                   -fx-text-fill: white;"/>
+
+        <!-- MAIN CARD -->
+        <VBox
+            prefWidth="580"
+            spacing="20"
+            alignment="CENTER"
+            style="-fx-background-color: rgba(56,84,89,0.8);
+                   -fx-background-radius: 40;
+                   -fx-effect: dropshadow(gaussian,
+                       rgba(0,0,0,0.4), 20, 0, 0, 5);
+                   -fx-padding: 45 50 45 50;">
+
+            <!-- PIXEL POCKET BRAND -->
+            <Label text="Pixel-Pocket"
+                style="-fx-font-family: 'Arial';
+                       -fx-font-size: 34;
+                       -fx-font-weight: bold;
+                       -fx-text-fill: white;"/>
+
+            <Region prefHeight="5"/>
+
+            <!-- EMAIL ROW -->
+            <HBox spacing="15" alignment="CENTER_LEFT"
+                prefWidth="480">
+                <Label text="👤"
+                    prefWidth="35"
+                    style="-fx-font-size: 26;
+                           -fx-text-fill: #bbbbbb;"/>
+                <TextField fx:id="emailField"
+                    promptText="E-mail/Username"
+                    prefHeight="56"
+                    prefWidth="430"
+                    style="-fx-background-color: #D9D9D9;
+                           -fx-text-fill: #333333;
+                           -fx-prompt-text-fill: #888888;
+                           -fx-background-radius: 28;
+                           -fx-padding: 0 20;
+                           -fx-font-size: 14;
+                           -fx-control-inner-background: #D9D9D9;"/>
+            </HBox>
+
+            <!-- PASSWORD ROW -->
+            <HBox spacing="15" alignment="CENTER_LEFT"
+                prefWidth="480">
+                <Label text="🔒"
+                    prefWidth="35"
+                    style="-fx-font-size: 26;
+                           -fx-text-fill: #bbbbbb;"/>
+                <StackPane prefWidth="430" prefHeight="56">
+
+                    <PasswordField fx:id="passwordField"
+                        promptText="Password"
+                        prefHeight="56"
+                        prefWidth="430"
+                        style="-fx-background-color: #D9D9D9;
+                               -fx-text-fill: #333333;
+                               -fx-prompt-text-fill: #888888;
+                               -fx-background-radius: 28;
+                               -fx-padding: 0 48 0 20;
+                               -fx-font-size: 14;
+                               -fx-control-inner-background: #D9D9D9;"/>
+
+                    <TextField fx:id="passwordVisible"
+                        promptText="Password"
+                        prefHeight="56"
+                        prefWidth="430"
+                        visible="false"
+                        managed="false"
+                        style="-fx-background-color: #D9D9D9;
+                               -fx-text-fill: #333333;
+                               -fx-background-radius: 28;
+                               -fx-padding: 0 48 0 20;
+                               -fx-font-size: 14;
+                               -fx-control-inner-background: #D9D9D9;"/>
+
+                    <Button text="👁"
+                        onAction="#togglePassword"
+                        style="-fx-background-color: transparent;
+                               -fx-cursor: hand;
+                               -fx-font-size: 16;"
+                        StackPane.alignment="CENTER_RIGHT"
+                        translateX="-12"/>
+
+                </StackPane>
+            </HBox>
+
+            <!-- FORGET PASSWORD -->
+            <Hyperlink text="Forget Password ?"
+                alignment="CENTER_RIGHT"
+                prefWidth="480"
+                opacity="0.5"
+                onAction="#handleForgotPassword"
+                style="-fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-font-size: 12;
+                       -fx-border-color: transparent;"/>
+
+            <!-- ERROR LABEL -->
+            <Label fx:id="errorLabel"
+                text=""
+                wrapText="true"
+                prefWidth="480"
+                style="-fx-text-fill: #ff6b6b;
+                       -fx-font-size: 12;"/>
+
+            <!-- LOGIN BUTTON -->
+            <Button text="LOGIN"
+                onAction="#handleLogin"
+                prefWidth="200"
+                prefHeight="56"
+                style="-fx-background-color: #7F9594;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-font-size: 18;
+                       -fx-background-radius: 28;
+                       -fx-cursor: hand;
+                       -fx-effect: dropshadow(gaussian,
+                           rgba(0,0,0,0.3), 8, 0, 0, 3);"/>
+
+        </VBox>
+
+    </VBox>
+
+</StackPane>

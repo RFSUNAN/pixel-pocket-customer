@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+
+<StackPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="PIXEL_POCKET.CUSTOMER.Home_Controller"
+    prefWidth="1440"
+    prefHeight="1027"
+    style="-fx-background-color: linear-gradient(to bottom right, #1D7386, #7F9594);">
+
+    <HBox>
+
+        <!-- LEFT SIDEBAR -->
+        <VBox prefWidth="426" prefHeight="1027" alignment="TOP_LEFT">
+
+            <HBox prefHeight="80" alignment="CENTER_LEFT"
+                style="-fx-padding: 20 0 0 20;">
+                <Button fx:id="homeButton" onAction="#goToHome"
+                    style="-fx-background-color: transparent;
+                           -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="⌂"
+                            style="-fx-font-size: 28;
+                                   -fx-text-fill: rgba(195,200,201,0.85);"/>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <VBox alignment="CENTER_LEFT" spacing="6"
+                style="-fx-padding: 0 0 120 54;">
+                <ImageView fx:id="logoImage"
+                    fitWidth="160" fitHeight="160"
+                    preserveRatio="true"/>
+                <Label text="PIXEL-POCKET"
+                    style="-fx-font-family: 'Baloo Tammudu';
+                           -fx-font-size: 32;
+                           -fx-text-fill: rgba(195,200,201,0.9);"/>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+        </VBox>
+
+        <!-- RIGHT DARK PANEL -->
+        <StackPane prefWidth="1014" prefHeight="1027"
+            style="-fx-background-color: #385459;
+                   -fx-background-radius: 60 0 0 0;">
+
+            <VBox alignment="TOP_CENTER">
+
+                <!-- USER INFO -->
+                <HBox alignment="CENTER"
+                    style="-fx-padding: 50 40 0 0;">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <VBox alignment="CENTER" spacing="8">
+                        <StackPane prefWidth="80" prefHeight="80">
+                            <Circle radius="40"
+                                style="-fx-stroke: #C3C8C9;
+                                       -fx-stroke-width: 2;
+                                       -fx-fill: transparent;"/>
+                            <Label text="👤"
+                                style="-fx-font-size: 30;
+                                       -fx-text-fill: #C3C8C9;"/>
+                        </StackPane>
+                        <Label fx:id="usernameLabel"
+                            text="User"
+                            style="-fx-font-family: 'Jaldi';
+                                   -fx-font-size: 24;
+                                   -fx-text-fill: #C3C8C9;"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <!-- NAVIGATION MENU -->
+                <HBox alignment="CENTER_LEFT"
+                    style="-fx-padding: 0 0 0 168;">
+
+                    <Rectangle width="4" height="331"
+                        style="-fx-fill: #C3C8C9;"/>
+
+                    <VBox spacing="0" alignment="TOP_LEFT">
+
+                        <!-- EDIT PROFILE -->
+                        <Button fx:id="editProfileBtn"
+                            onAction="#goToEditProfile"
+                            prefHeight="82"
+                            style="-fx-background-color: transparent;
+                                   -fx-cursor: hand;
+                                   -fx-padding: 0 0 0 20;">
+                            <graphic>
+                                <HBox spacing="16" alignment="CENTER_LEFT">
+                                    <Label text="✎"
+                                        style="-fx-font-size: 22;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                    <Label text="Edit Profile"
+                                        style="-fx-font-family: 'Jaldi';
+                                               -fx-font-size: 24;
+                                               -fx-font-weight: bold;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                </HBox>
+                            </graphic>
+                        </Button>
+
+                        <!-- ORDER HISTORY -->
+                        <Button fx:id="orderHistoryBtn"
+                            onAction="#goToOrderHistory"
+                            prefHeight="82"
+                            style="-fx-background-color: transparent;
+                                   -fx-cursor: hand;
+                                   -fx-padding: 0 0 0 20;">
+                            <graphic>
+                                <HBox spacing="16" alignment="CENTER_LEFT">
+                                    <Label text="☰"
+                                        style="-fx-font-size: 22;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                    <Label text="Order History"
+                                        style="-fx-font-family: 'Jaldi';
+                                               -fx-font-size: 24;
+                                               -fx-font-weight: bold;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                </HBox>
+                            </graphic>
+                        </Button>
+
+                        <!-- PREFERENCES -->
+                        <Button fx:id="preferencesBtn"
+                            onAction="#goToPreferences"
+                            prefHeight="82"
+                            style="-fx-background-color: transparent;
+                                   -fx-cursor: hand;
+                                   -fx-padding: 0 0 0 20;">
+                            <graphic>
+                                <HBox spacing="16" alignment="CENTER_LEFT">
+                                    <Label text="⚙"
+                                        style="-fx-font-size: 22;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                    <Label text="Preferences"
+                                        style="-fx-font-family: 'Jaldi';
+                                               -fx-font-size: 24;
+                                               -fx-font-weight: bold;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                </HBox>
+                            </graphic>
+                        </Button>
+
+                        <!-- ACCOUNT SETTINGS -->
+                        <Button fx:id="accountSettingsBtn"
+                            onAction="#goToAccountSettings"
+                            prefHeight="82"
+                            style="-fx-background-color: transparent;
+                                   -fx-cursor: hand;
+                                   -fx-padding: 0 0 0 20;">
+                            <graphic>
+                                <HBox spacing="16" alignment="CENTER_LEFT">
+                                    <Label text="👥"
+                                        style="-fx-font-size: 22;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                    <Label text="Account Settings"
+                                        style="-fx-font-family: 'Jaldi';
+                                               -fx-font-size: 24;
+                                               -fx-font-weight: bold;
+                                               -fx-text-fill: #C3C8C9;"/>
+                                </HBox>
+                            </graphic>
+                        </Button>
+
+                    </VBox>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+            </VBox>
+
+            <!-- LOGOUT ARROW bottom right -->
+            <Button fx:id="logoutArrow"
+                onAction="#handleLogout"
+                StackPane.alignment="BOTTOM_RIGHT"
+                style="-fx-background-color: transparent;
+                       -fx-cursor: hand;
+                       -fx-padding: 0 40 30 0;">
+                <graphic>
+                    <Label text="⇥"
+                        style="-fx-font-size: 30;
+                               -fx-text-fill: #C3C8C9;"/>
+                </graphic>
+            </Button>
+
+        </StackPane>
+    </HBox>
+
+</StackPane>

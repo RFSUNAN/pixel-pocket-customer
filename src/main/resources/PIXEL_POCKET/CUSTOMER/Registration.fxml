@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<StackPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="PIXEL_POCKET.CUSTOMER.Registration_Controller"
+    prefWidth="1200"
+    prefHeight="900"
+    style="-fx-background-color: linear-gradient(to right, #1D7386, #7F9594);">
+
+    <VBox spacing="25" alignment="CENTER"
+        StackPane.alignment="CENTER">
+
+        <!-- TITLE -->
+        <Label text="USER REGISTRATION"
+            style="-fx-font-family: 'Arial';
+                   -fx-font-size: 58;
+                   -fx-font-weight: bold;
+                   -fx-text-fill: white;"/>
+
+        <!-- TWO CARDS SIDE BY SIDE -->
+        <HBox spacing="25" alignment="CENTER">
+
+            <!-- LEFT CARD - PERSONAL DETAILS -->
+            <VBox prefWidth="480" spacing="14"
+                style="-fx-background-color: rgba(56,84,89,0.9);
+                       -fx-background-radius: 40;
+                       -fx-padding: 30;">
+
+                <Label text="Personal Details"
+                    style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+                <HBox spacing="12">
+                    <TextField fx:id="firstNameField" promptText="First Name"
+                        prefHeight="38" prefWidth="185"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <TextField fx:id="lastNameField" promptText="Last Name"
+                        prefHeight="38" prefWidth="185"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                </HBox>
+
+                <Label text="Date Of Birth"
+                    style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <HBox spacing="10">
+                    <TextField fx:id="dobDayField" promptText="01"
+                        prefHeight="38" prefWidth="95"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <TextField fx:id="dobMonthField" promptText="January"
+                        prefHeight="38" prefWidth="135"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <TextField fx:id="dobYearField" promptText="2000"
+                        prefHeight="38" prefWidth="115"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                </HBox>
+
+                <Label text="Gender"
+                    style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <HBox spacing="25" alignment="CENTER_LEFT">
+                    <RadioButton fx:id="maleRadio" text="MALE"
+                        style="-fx-text-fill: white; -fx-font-size: 14;"/>
+                    <RadioButton fx:id="femaleRadio" text="FEMALE"
+                        style="-fx-text-fill: white; -fx-font-size: 14;"/>
+                    <RadioButton fx:id="otherRadio" text="OTHER"
+                        style="-fx-text-fill: white; -fx-font-size: 14;"/>
+                </HBox>
+
+                <Label text="Residential Address"
+                    style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <TextField fx:id="addressLine1Field" promptText="Address Line 1"
+                    prefHeight="38"
+                    style="-fx-background-color: rgba(195,200,201,0.9);
+                           -fx-background-radius: 26; -fx-padding: 0 10;
+                           -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                           -fx-text-fill: #1a1a1a;"/>
+                <TextField fx:id="addressLine2Field" promptText="Address Line 2 (Optional)"
+                    prefHeight="38"
+                    style="-fx-background-color: rgba(195,200,201,0.9);
+                           -fx-background-radius: 26; -fx-padding: 0 10;
+                           -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                           -fx-text-fill: #1a1a1a;"/>
+
+                <HBox spacing="10">
+                    <TextField fx:id="postcodeField" promptText="Post-Code"
+                        prefHeight="38" prefWidth="120"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 14; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <TextField fx:id="townField" promptText="Town"
+                        prefHeight="38" prefWidth="120"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 14; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <TextField fx:id="countryField" promptText="Country"
+                        prefHeight="38" prefWidth="120"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 14; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <TextField promptText="🇬🇧 +44"
+                        prefHeight="38" prefWidth="100"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 14; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <TextField fx:id="phoneField" promptText="732*****"
+                        prefHeight="38" prefWidth="220"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 10;
+                               -fx-font-size: 14; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                </HBox>
+
+            </VBox>
+
+            <!-- RIGHT CARD - ACCOUNT DETAILS -->
+            <VBox prefWidth="480" spacing="14"
+                style="-fx-background-color: rgba(56,84,89,0.9);
+                       -fx-background-radius: 40;
+                       -fx-padding: 30;">
+
+                <Label text="Account Details"
+                    style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+                <TextField fx:id="emailField" promptText="E-Mail or Username"
+                    prefHeight="38"
+                    style="-fx-background-color: rgba(195,200,201,0.9);
+                           -fx-background-radius: 26; -fx-padding: 0 10;
+                           -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                           -fx-text-fill: #1a1a1a;"/>
+
+                <StackPane prefHeight="38">
+                    <PasswordField fx:id="passwordField" promptText="Password"
+                        prefHeight="38"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 38 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;"/>
+                    <TextField fx:id="passwordVisible" promptText="Password"
+                        prefHeight="38" visible="false" managed="false"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 38 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <Button text="👁" onAction="#togglePassword"
+                        style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 14;"
+                        StackPane.alignment="CENTER_RIGHT" translateX="-8"/>
+                </StackPane>
+
+                <StackPane prefHeight="38">
+                    <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"
+                        prefHeight="38"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 38 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;"/>
+                    <TextField fx:id="confirmVisible" promptText="Confirm Password"
+                        prefHeight="38" visible="false" managed="false"
+                        style="-fx-background-color: rgba(195,200,201,0.9);
+                               -fx-background-radius: 26; -fx-padding: 0 38 0 10;
+                               -fx-font-size: 16; -fx-prompt-text-fill: #3a5a5f;
+                               -fx-text-fill: #1a1a1a;"/>
+                    <Button text="👁" onAction="#toggleConfirmPassword"
+                        style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-size: 14;"
+                        StackPane.alignment="CENTER_RIGHT" translateX="-8"/>
+                </StackPane>
+
+                <VBox spacing="3">
+                    <Label text="Password must:"
+                        style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13;"/>
+                    <Label text="> Contain 8 to 30 characters"
+                        opacity="0.8" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+                    <Label text="> Contain both lower and uppercase letters"
+                        opacity="0.8" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+                    <Label text="> Contain one number"
+                        opacity="0.8" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+                    <Label text="> Contain one special '!@#$%+' character"
+                        opacity="0.8" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+                </VBox>
+
+                <Label text="ID Card Upload"
+                    style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+                <VBox fx:id="dropZone" prefHeight="130" alignment="CENTER" spacing="8"
+                    onDragOver="#handleDragOver"
+                    onDragDropped="#handleDragDropped"
+                    style="-fx-background-color: rgba(56,84,89,0.5);
+                           -fx-border-color: rgba(255,255,255,0.5);
+                           -fx-border-radius: 20; -fx-background-radius: 20;
+                           -fx-border-width: 1.5; -fx-padding: 20;">
+                    <Label text="⬆" style="-fx-font-size: 28; -fx-text-fill: white;"/>
+                    <HBox spacing="5" alignment="CENTER">
+                        <Label text="Drag files here or"
+                            style="-fx-text-fill: white; -fx-font-size: 13;"/>
+                        <Hyperlink fx:id="browseLink" text="Browse"
+                            onAction="#handleBrowse"
+                            style="-fx-text-fill: #15F06C; -fx-font-size: 13;
+                                   -fx-border-color: transparent;"/>
+                    </HBox>
+                    <Label fx:id="uploadedFileLabel" text="" wrapText="true"
+                        style="-fx-text-fill: #15F06C; -fx-font-size: 12;"/>
+                </VBox>
+
+                <VBox spacing="3">
+                    <Label text="Image must be"
+                        style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12;"/>
+                    <Label text=">  JPG, PNG, or PDF"
+                        opacity="0.8" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+                    <Label text="> Max size: 5 MB"
+                        opacity="0.8" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+                </VBox>
+
+                <Label fx:id="errorLabel" text="" wrapText="true"
+                    style="-fx-text-fill: #ff6b6b; -fx-font-size: 12;"/>
+                <Label fx:id="successLabel" text="" wrapText="true"
+                    style="-fx-text-fill: #15F06C; -fx-font-size: 12;"/>
+
+            </VBox>
+        </HBox>
+
+        <Button text="Register" onAction="#handleRegister"
+            prefWidth="290" prefHeight="55"
+            style="-fx-background-color: #7F9594; -fx-text-fill: white;
+                   -fx-font-weight: bold; -fx-font-size: 22;
+                   -fx-background-radius: 26; -fx-cursor: hand;
+                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3);"/>
+
+        <HBox spacing="5" alignment="CENTER">
+            <Label text="Already have an account ?"
+                style="-fx-text-fill: white; -fx-font-size: 14;"/>
+            <Hyperlink text="Login" onAction="#goToLogin"
+                style="-fx-text-fill: #15F06C; -fx-font-size: 14;
+                       -fx-border-color: transparent;"/>
+        </HBox>
+
+    </VBox>
+</StackPane>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<StackPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="PIXEL_POCKET.CUSTOMER.OrderHistory_Controller"
+    prefWidth="1440"
+    prefHeight="1027"
+    style="-fx-background-color: linear-gradient(to bottom right, #1D7386, #7F9594);">
+
+    <HBox>
+
+        <!-- ══════════════════ -->
+        <!-- LEFT SIDEBAR       -->
+        <!-- ══════════════════ -->
+        <VBox prefWidth="390" prefHeight="1027" alignment="TOP_LEFT">
+
+            <!-- HOME BUTTON -->
+            <HBox prefHeight="60" alignment="CENTER_LEFT"
+                style="-fx-padding: 20 0 0 20;">
+                <Button onAction="#goToHome"
+                    style="-fx-background-color: transparent;
+                           -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="⌂"
+                            style="-fx-font-size: 28;
+                                   -fx-text-fill: rgba(195,200,201,0.85);"/>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <!-- BACK + TITLE -->
+            <HBox alignment="CENTER_LEFT" spacing="10"
+                style="-fx-padding: 80 0 14 20;
+                       -fx-border-color: transparent transparent
+                           rgba(195,200,201,0.4) transparent;
+                       -fx-border-width: 0 0 1 0;">
+                <Button onAction="#goBack"
+                    style="-fx-background-color: transparent;
+                           -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="←"
+                            style="-fx-font-size: 22;
+                                   -fx-text-fill: #C3C8C9;"/>
+                    </graphic>
+                </Button>
+                <Label text="☰"
+                    style="-fx-font-size: 20;
+                           -fx-text-fill: #C3C8C9;"/>
+                <Label text="Order History"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 26;
+                           -fx-font-weight: bold;
+                           -fx-text-fill: #C3C8C9;"/>
+            </HBox>
+
+        </VBox>
+
+        <!-- ════════════════════════════════════════ -->
+        <!-- RIGHT PANEL — matches Figma exactly      -->
+        <!-- Same dark teal as Home/EditProfile pages -->
+        <!-- ════════════════════════════════════════ -->
+        <VBox prefWidth="1050" prefHeight="1027" spacing="0"
+            style="-fx-background-color: #2E5057;
+                   -fx-background-radius: 60 0 0 0;">
+
+            <!-- TOTAL LABEL TOP RIGHT -->
+            <HBox alignment="CENTER_RIGHT"
+                style="-fx-padding: 30 30 20 30;">
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="totalLabel"
+                    text="TOTAL : £0.00"
+                    style="-fx-background-color: #1D7386;
+                           -fx-background-radius: 26;
+                           -fx-padding: 10 24;
+                           -fx-font-family: 'Jaldi';
+                           -fx-font-size: 22;
+                           -fx-font-weight: bold;
+                           -fx-text-fill: white;"/>
+            </HBox>
+
+            <!-- TABLE HEADER BAR -->
+            <HBox prefHeight="50" alignment="CENTER_LEFT"
+                style="-fx-background-color: #1D7386;
+                       -fx-padding: 0 30;">
+                <Label text="Product"
+                    prefWidth="430"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 18;
+                           -fx-text-fill: white;
+                           -fx-padding: 0 0 0 10;"/>
+                <Label text="Order Number"
+                    prefWidth="200"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 18;
+                           -fx-text-fill: white;"/>
+                <Label text="Price"
+                    prefWidth="120"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 18;
+                           -fx-text-fill: white;"/>
+                <Label text="Attributes"
+                    prefWidth="160"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 18;
+                           -fx-text-fill: white;"/>
+                <Label text="Status"
+                    prefWidth="110"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 18;
+                           -fx-text-fill: white;"/>
+            </HBox>
+
+            <!-- SCROLLABLE ORDER ROWS -->
+            <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                style="-fx-background: transparent;
+                       -fx-background-color: transparent;
+                       -fx-border-color: transparent;">
+                <VBox fx:id="orderListContainer" spacing="0"
+                    style="-fx-background-color: transparent;"/>
+            </ScrollPane>
+
+        </VBox>
+
+    </HBox>
+
+</StackPane>

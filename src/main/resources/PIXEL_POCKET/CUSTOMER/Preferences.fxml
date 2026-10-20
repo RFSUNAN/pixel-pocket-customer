@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<StackPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="PIXEL_POCKET.CUSTOMER.PreferencesFxml_Controller"
+    prefWidth="1440"
+    prefHeight="1027"
+    style="-fx-background-color: linear-gradient(to bottom right, #1D7386, #7F9594);">
+
+    <HBox>
+
+        <!-- LEFT SIDEBAR -->
+        <VBox prefWidth="390" prefHeight="1027" alignment="TOP_LEFT">
+
+            <HBox prefHeight="60" alignment="CENTER_LEFT"
+                style="-fx-padding: 20 0 0 20;">
+                <Button onAction="#goToHome"
+                    style="-fx-background-color: transparent;
+                           -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="⌂"
+                            style="-fx-font-size: 28;
+                                   -fx-text-fill: rgba(195,200,201,0.85);"/>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10"
+                style="-fx-padding: 80 0 14 20;
+                       -fx-border-color: transparent transparent
+                           rgba(195,200,201,0.4) transparent;
+                       -fx-border-width: 0 0 1 0;">
+                <Button onAction="#goBack"
+                    style="-fx-background-color: transparent;
+                           -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="←"
+                            style="-fx-font-size: 22;
+                                   -fx-text-fill: #C3C8C9;"/>
+                    </graphic>
+                </Button>
+                <Label text="⚙"
+                    style="-fx-font-size: 20;
+                           -fx-text-fill: #C3C8C9;"/>
+                <Label text="Preferences"
+                    style="-fx-font-family: 'Jaldi';
+                           -fx-font-size: 26;
+                           -fx-font-weight: bold;
+                           -fx-text-fill: #C3C8C9;"/>
+            </HBox>
+
+        </VBox>
+
+        <!-- RIGHT DARK PANEL -->
+        <VBox prefWidth="1050" prefHeight="1027" spacing="0"
+            style="-fx-background-color: #2E5057;
+                   -fx-background-radius: 60 0 0 0;">
+
+            <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                style="-fx-background: transparent;
+                       -fx-background-color: transparent;
+                       -fx-border-color: transparent;">
+
+                <VBox spacing="30"
+                    style="-fx-padding: 60 60 40 60;
+                           -fx-background-color: transparent;">
+
+                    <!-- ══════════════════════════ -->
+                    <!-- NOTIFICATION SETTINGS      -->
+                    <!-- ══════════════════════════ -->
+                    <Label text="Notification Settings"
+                        style="-fx-font-family: 'Jaldi';
+                               -fx-font-size: 24;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: white;"/>
+
+                    <HBox spacing="20" alignment="CENTER_LEFT">
+
+                        <!-- TOGGLE 1 -->
+                        <HBox spacing="14" alignment="CENTER"
+                            style="-fx-background-color: rgba(195,200,201,0.2);
+                                   -fx-background-radius: 30;
+                                   -fx-padding: 12 22;
+                                   -fx-border-color: rgba(195,200,201,0.3);
+                                   -fx-border-radius: 30;
+                                   -fx-border-width: 1;">
+                            <Label text="Receive Promotional Emails"
+                                style="-fx-font-size: 14;
+                                       -fx-text-fill: #C3C8C9;"/>
+                            <ToggleButton fx:id="promoEmailToggle"
+                                onAction="#handleToggle"
+                                prefWidth="52" prefHeight="28"
+                                style="-fx-background-color: #888888;
+                                       -fx-background-radius: 14;
+                                       -fx-text-fill: transparent;
+                                       -fx-cursor: hand;
+                                       -fx-padding: 0;"/>
+                        </HBox>
+
+                        <!-- TOGGLE 2 -->
+                        <HBox spacing="14" alignment="CENTER"
+                            style="-fx-background-color: rgba(195,200,201,0.2);
+                                   -fx-background-radius: 30;
+                                   -fx-padding: 12 22;
+                                   -fx-border-color: rgba(195,200,201,0.3);
+                                   -fx-border-radius: 30;
+                                   -fx-border-width: 1;">
+                            <Label text="Receive SMS Alerts"
+                                style="-fx-font-size: 14;
+                                       -fx-text-fill: #C3C8C9;"/>
+                            <ToggleButton fx:id="smsAlertToggle"
+                                onAction="#handleToggle"
+                                prefWidth="52" prefHeight="28"
+                                style="-fx-background-color: #888888;
+                                       -fx-background-radius: 14;
+                                       -fx-text-fill: transparent;
+                                       -fx-cursor: hand;
+                                       -fx-padding: 0;"/>
+                        </HBox>
+
+                        <!-- TOGGLE 3 -->
+                        <HBox spacing="14" alignment="CENTER"
+                            style="-fx-background-color: rgba(195,200,201,0.2);
+                                   -fx-background-radius: 30;
+                                   -fx-padding: 12 22;
+                                   -fx-border-color: rgba(195,200,201,0.3);
+                                   -fx-border-radius: 30;
+                                   -fx-border-width: 1;">
+                            <Label text="Wishlist items go on sale"
+                                style="-fx-font-size: 14;
+                                       -fx-text-fill: #C3C8C9;"/>
+                            <ToggleButton fx:id="wishlistToggle"
+                                onAction="#handleToggle"
+                                prefWidth="52" prefHeight="28"
+                                style="-fx-background-color: #888888;
+                                       -fx-background-radius: 14;
+                                       -fx-text-fill: transparent;
+                                       -fx-cursor: hand;
+                                       -fx-padding: 0;"/>
+                        </HBox>
+
+                    </HBox>
+
+                    <!-- ══════════════════════════ -->
+                    <!-- PREFERRED CATEGORIES       -->
+                    <!-- ══════════════════════════ -->
+                    <Label text="Preferred Categories"
+                        style="-fx-font-family: 'Jaldi';
+                               -fx-font-size: 24;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: white;"/>
+
+                    <!-- ROW 1 -->
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <ToggleButton fx:id="clothesBtn"
+                            text="Clothes"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                        <ToggleButton fx:id="sneakersBtn"
+                            text="Sneakers"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                        <ToggleButton fx:id="electronicsBtn"
+                            text="Electronics"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                        <ToggleButton fx:id="homeBtn"
+                            text="Home &amp; Accessories"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                        <ToggleButton fx:id="beautyBtn"
+                            text="Beauty &amp; Fragrance"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                    </HBox>
+
+                    <!-- ROW 2 -->
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <ToggleButton fx:id="jewelryBtn"
+                            text="Jewelry &amp; Watches"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                        <ToggleButton fx:id="healthBtn"
+                            text="Health &amp; Wellness"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                        <ToggleButton fx:id="toysBtn"
+                            text="Toys &amp; Games"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                        <ToggleButton fx:id="petBtn"
+                            text="Pet Supplies"
+                            onAction="#handleCategory"
+                            style="-fx-background-color: rgba(195,200,201,0.25);
+                                   -fx-background-radius: 26;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-font-size: 15;
+                                   -fx-padding: 10 24;
+                                   -fx-cursor: hand;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 26;
+                                   -fx-border-width: 1;"/>
+                    </HBox>
+
+                    <!-- ══════════════════════════ -->
+                    <!-- DELIVERY INSTRUCTIONS      -->
+                    <!-- ══════════════════════════ -->
+                    <Label text="Delivery Instructions"
+                        style="-fx-font-family: 'Jaldi';
+                               -fx-font-size: 24;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: white;"/>
+
+                    <StackPane>
+                        <TextArea fx:id="deliveryInstructions"
+                            promptText="e.g., Please leave the package in the blue recycling bin if I am not home"
+                            prefHeight="130"
+                            wrapText="true"
+                            style="-fx-background-color: rgba(195,200,201,0.15);
+                                   -fx-background-radius: 20;
+                                   -fx-border-color: rgba(195,200,201,0.4);
+                                   -fx-border-radius: 20;
+                                   -fx-border-width: 1.5;
+                                   -fx-text-fill: #C3C8C9;
+                                   -fx-prompt-text-fill: rgba(195,200,201,0.5);
+                                   -fx-font-size: 14;
+                                   -fx-padding: 14;
+                                   -fx-control-inner-background:
+                                       rgba(195,200,201,0.15);"/>
+                        <Label fx:id="charCountLabel"
+                            text="0/250"
+                            StackPane.alignment="BOTTOM_RIGHT"
+                            style="-fx-text-fill: rgba(195,200,201,0.6);
+                                   -fx-font-size: 12;"
+                            translateX="-14" translateY="-8"/>
+                    </StackPane>
+
+                    <!-- ERROR / SUCCESS -->
+                    <Label fx:id="errorLabel" text=""
+                        wrapText="true"
+                        style="-fx-text-fill: #ff6b6b;
+                               -fx-font-size: 13;"/>
+                    <Label fx:id="successLabel" text=""
+                        wrapText="true"
+                        style="-fx-text-fill: #15F06C;
+                               -fx-font-size: 13;"/>
+
+                    <!-- SAVE BUTTON -->
+                    <HBox alignment="CENTER">
+                        <Button text="SAVE PREFERENCES"
+                            onAction="#handleSave"
+                            prefWidth="340" prefHeight="55"
+                            style="-fx-background-color: #7F9594;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-font-size: 18;
+                                   -fx-background-radius: 26;
+                                   -fx-cursor: hand;"/>
+                    </HBox>
+
+                </VBox>
+            </ScrollPane>
+        </VBox>
+
+    </HBox>
+</StackPane>
