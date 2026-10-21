@@ -28,3 +28,30 @@ Developed as part of a university group project. This repository focuses on my c
 
 ## Project Status
 University project — archived for portfolio documentation.
+
+
+## Application Screenshots
+
+### Login Screen
+![Login Screen](screenshots/login.png)
+
+### Registration Screen
+![Registration Screen](screenshots/registration.png)
+
+### Home Dashboard
+![Home Dashboard](screenshots/home.png)
+
+### Account Settings
+![Account Settings](screenshots/account%20settings.png)
+
+### Edit Profile
+![Edit Profile](screenshots/edit%20profile.png)
+
+### Order History
+![Order History](screenshots/order%20history.png)
+
+### Preferences
+![Preferences](screenshots/preferences.png)
+
+### Admin Login
+![Admin Login](screenshots/admin%20login.png)
